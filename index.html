@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title>
+
+    <style>
+        body {
+            background-color: #e9e7e7;
+        }
+
+        .input {
+            width: 280px;
+            height: 40px;
+            margin-left: 10px;
+            border: 1px solid rgb(186, 186, 186);
+            border-radius: 4px;
+        }
+
+        #login_box {
+            padding: 30px;
+            margin: auto;
+            width: 300px;
+            height: 400px;
+            background-color: #fff;
+            box-shadow: 5px 5px 7px 0px rgb(157, 155, 155);
+            border-radius: 15px;
+        }
+
+        #btn-login {
+            width: 280px;
+            height: 50px;
+            border-radius: 5px;
+            border: none;
+            margin: auto;
+            margin-left: 4%;
+            color: #fff;
+            background-color: #444;
+            cursor: pointer;
+
+        }
+        #btn-login:hover{
+            background-color: #333
+        }
+
+
+        #buttonTwo {
+            width: 200px;
+            height: 50px;
+            border: none;
+            margin: auto;
+            margin-left: 20%;
+            color: #fff;
+            background-color: #28a745;
+            border-radius: 5px;
+cursor: pointer;
+        }
+        #buttonTwo:hover{
+            background-color: rgb(5, 146, 5);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="login_box">
+        <center>
+            <h1 style="color:  #333 ;font-size: 2.5em;" ><b>TODO APP</b></h1>
+        </center>
+        <form action="">
+            <input required id="email" class="input" type="email" name="Email"
+                placeholder="Email adress or phone number" /></label><br />
+            <br>
+            <input required id="password" class="input" type="password" name="password"
+                placeholder="password" /><br><br>
+            <button id="btn-login"><b>Sign up</b></button>
+            <center>
+                <!-- <input type="file" id="img"><br><br> -->
+                <a href="#">
+                    <h4>forget password?</h4>
+                </a>
+            </center>
+</form>
+            <hr>
+            <a href="./login/login.html"><button id="buttonTwo"><b>Login</b></button></a>
+    </div>
+    
+
+
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
