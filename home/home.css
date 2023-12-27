@@ -153,3 +153,14 @@ header {
     background-color: #218838;
 
 }
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20%;
+}
+body {
+   
+    font-family: 'Arial', sans-serif;
+}

@@ -2,7 +2,7 @@ import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/1
 import { auth } from "../config.js";
 
 
-
+const showErr = document.getElementById("show-err")
 const email = document.getElementById("email")
 const password   = document.getElementById("password")
 const btnLogin = document.getElementById("btn-login")
@@ -13,14 +13,22 @@ form.addEventListener('submit', (event) => {
     signInWithEmailAndPassword(auth, email.value, password.value)
         .then((userCredential) => {
             const user = userCredential.user;
+        //  const greenerr=   showErr.innerHTML="you successfully login "
+        //  greenerr.style.color="green"
             window.location = "../home/home.html"
 
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorMessage);
+       
+            
+          showErr.innerHTML=errorMessage
+            // console.log(errorMessage);
+        
         });
+        // const greenarr = showErr.style.color="green"
+       
     email.value = ''
     password.value = ''
 })

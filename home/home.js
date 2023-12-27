@@ -22,17 +22,28 @@ let userUid;
 onAuthStateChanged(auth, async (user) => {
   if (user) {
     const uid = user.uid;
-    console.log(uid);
+    // console.log(uid);
     userUid = uid;
     const q = query(collection(db, "todos"), where("uid", "==", uid), orderBy('timestamp', 'desc'));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
       arr.push({ ...doc.data(), docId: doc.id });
-    });
-   
-    renderTodo()
+
+});
+renderTodo()
+  //user profile img get 
+  const qProfile = query(collection(db, "users"), where("uid", "==", uid));
+  const querySnapshotProfile = await getDocs(qProfile);
+  querySnapshotProfile.forEach((doc) => {
+    //   console.log(doc.data());
+    const ProfileImg = document.getElementById("Profile-Img")
+    profileImg.src=doc.data().profileUrl
+  });
+
+
+    
   } else {
-    window.location = 'login.html'
+    window.location = '../login/login.html'
   }
 });
 
@@ -144,12 +155,13 @@ function updateTodo(index) {
 }
 
 renderTodo();
-// //some my function
-// const profileImg = document.getElementById("pImg")
-// profileImg.addEventListener("mouseover", () => {
-//     const sbox = document.createElement("div")
-//     alert("option availabel soon")
-// })
+//some my function
+const profileImg = document.getElementById("Profile-Img")
+profileImg.addEventListener("click", (event) => {
+    event.preventDefault()
+//    window.location="./profile user/profile.html"
+window.location = '../profile user/profile.html'
+})
 
 
 
